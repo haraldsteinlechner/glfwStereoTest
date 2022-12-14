@@ -64,6 +64,13 @@ int main(void)
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
     glfwWindowHint(GLFW_STEREO, 1);
+    glfwWindowHint(GLFW_SCALE_TO_MONITOR, 1);
+    glfwWindowHint(GLFW_DOUBLEBUFFER, 1);
+
+    glfwWindowHint(GLFW_VISIBLE, 1);
+    glfwWindowHint(GLFW_REFRESH_RATE, 0);
+
+    glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, 1);
 
     window = glfwCreateWindow(640, 480, "Simple example", NULL, NULL);
     if (!window)
@@ -135,6 +142,7 @@ int main(void)
         glDrawBuffer(GL_LEFT);
         glClearColor(1.0, 0.0, 0.0, 1.0);
         glClear(GL_COLOR_BUFFER_BIT);
+        glDrawBuffer(GL_RIGHT);
         glClearColor(0.0, 0.0, 1.0, 1.0);
         glClear(GL_COLOR_BUFFER_BIT);
 
